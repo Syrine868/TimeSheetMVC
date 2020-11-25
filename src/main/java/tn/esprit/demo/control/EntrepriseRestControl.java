@@ -35,7 +35,7 @@ public class EntrepriseRestControl {
 	}
 	
 	
-	@PostMapping("/affecter/{dep-id}/{entreprise-id}")
+	@PostMapping("/affecterDepEntreprise/{dep-id}/{entreprise-id}")
 	@ResponseBody
 	public void affecterdepartEntre(@PathVariable("dep-id")int depid, @PathVariable("entreprise-id")int entrepriseid){
 		ies.affecterDepartementAEntreprise(depid, entrepriseid);
@@ -43,7 +43,7 @@ public class EntrepriseRestControl {
 
 	@GetMapping("/departementsByname/{entreprise-id}")
 	@ResponseBody
-	public List<String> retrieveUser(@PathVariable("entreprise-id")int entrepriseId)
+	public List<String> retrievedepByName(@PathVariable("entreprise-id")int entrepriseId)
 	{
 		return ies.getAllDepartementsNamesByEntreprise(entrepriseId);
 	}

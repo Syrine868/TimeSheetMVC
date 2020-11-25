@@ -31,7 +31,7 @@ public class EmployeRestController {
 		return ies.ajouterContrat(contrat);
 	}
 	
-	@PostMapping("/affecter/{id}/{id}")
+	@PostMapping("/affecterContratEmp/{id}/{id}")
 	@ResponseBody
 	public void affecterContratEmp (@PathVariable("id")int contratId,@PathVariable("id")int  employeId){
 			ies.affecterContratAEmploye(contratId, employeId);
