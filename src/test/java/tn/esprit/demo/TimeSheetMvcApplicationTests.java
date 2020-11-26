@@ -43,15 +43,14 @@ public class TimeSheetMvcApplicationTests {
 	
 	ies.getAllDepartementsNamesByEntreprise(entreprise.getId().intValue());
 		
-		//Employe employe=new Employe("yosra.arbi@ssiiconsulting.tn", 1, "Yosra", "Arbi", Role.chefDepartement);
-		Employe employe1=new Employe("syrine868@gmail.com", 0, "Jlassi", "Syrine", Role.ingénieur);
-		iemps.ajouterEmploye(employe1);
-		/*Contrat contrat = new Contrat(new Date(),900,"CDI", employe1);
+		Employe employe=new Employe("yosra.arbi@ssiiconsulting.tn", 1, "Yosra", "Arbi", Role.chefDepartement);
+		//Employe employe1=new Employe("syrine868@gmail.com", 1, "Jlassi", "Syrine", Role.ingénieur);
+		iemps.ajouterEmploye(employe);
+		Contrat contrat = new Contrat(new Date(),900,"CDI", new Employe("syrine868@gmail.com", 1, "Jlassi", "Syrine", Role.ingénieur));
 		iemps.ajouterContrat(contrat);
-		iemps.affecterContratAEmploye(contrat.getId().intValue(), employe1.getId().intValue());*/
-		iemps.affecterEmployeADepartement(employe1.getId().intValue(), dep.getId().intValue());
-		//iemps.getEmployePrenomById(employe1.getId().intValue());
-		
+		iemps.affecterContratAEmploye(contrat.getId().intValue(), employe.getId().intValue());
+		iemps.affecterEmployeADepartement(employe.getId().intValue(), dep.getId().intValue());
+		iemps.getEmployePrenomById(employe.getId().intValue());
 		iemps.getAllEmployeNamesJPQL();
 		iemps.getNombreEmployeJPQL();
 		

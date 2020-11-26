@@ -102,7 +102,7 @@ public class Employe implements Serializable{
 				+ ", role=" + role + "]";
 	}
 
-	public Employe(Long id, String email, int isActif, String prenom, String nom, Role role) {
+	public Employe(Long id, String email, int isActif,  String nom,String prenom, Role role) {
 		super();
 		this.id = id;
 		this.email = email;
