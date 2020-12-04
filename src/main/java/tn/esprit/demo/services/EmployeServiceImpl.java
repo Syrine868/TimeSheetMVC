@@ -4,17 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.demo.entities.Contrat;
 import tn.esprit.demo.entities.Departement;
 import tn.esprit.demo.entities.Employe;
+import tn.esprit.demo.entities.Entreprise;
 import tn.esprit.demo.repository.ContratRepository;
 import tn.esprit.demo.repository.DepartementRepository;
 import tn.esprit.demo.repository.EmpDepRepo;
@@ -37,6 +41,8 @@ public class EmployeServiceImpl implements IEmployeService{
 	
 	@Autowired
 	EmpDepRepo empdepr;
+	
+	EntityManager em;
 	
 	@Override
 	public int ajouterEmploye(Employe employe) {
@@ -100,6 +106,19 @@ public class EmployeServiceImpl implements IEmployeService{
 		l.info("getAllEmployeNamesJPQL: "+employeNames);
 		
 		return employeNames;
+	}
+
+	@Override
+	public List<Employe> getAllEmployeByEntreprise(@Param("entreprise")Entreprise entreprise) {
+		 
+		 List<Employe> employes=empr.getAllbyEntre();
+	 	return employes;
+	}
+
+	@Override
+	public Double getSalaireMoyenByDepartementId(int departementId) {
+		
+		return null;
 	}
 
 }

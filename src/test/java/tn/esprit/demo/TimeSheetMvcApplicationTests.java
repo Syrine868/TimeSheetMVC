@@ -35,24 +35,25 @@ public class TimeSheetMvcApplicationTests {
 	
 	@Test
 	public void contextLoads() {
-	Entreprise entreprise=  new Entreprise( "X4", "Tunis");
+	Entreprise entreprise=  new Entreprise( "X7", "Tunis");
     ies.ajouterEntreprise(entreprise);
-	Departement dep = new Departement( "X5",entreprise);
-	ies.ajouterDepartement(dep);
-	ies.affecterDepartementAEntreprise(dep.getId().intValue(),entreprise.getId().intValue());
+	//Departement dep = new Departement( "X6",entreprise);
+	//ies.ajouterDepartement(dep);
+	//ies.affecterDepartementAEntreprise(dep.getId().intValue(),entreprise.getId().intValue());
 	
-	ies.getAllDepartementsNamesByEntreprise(entreprise.getId().intValue());
+	//ies.getAllDepartementsNamesByEntreprise(entreprise.getId().intValue());
 		
-		Employe employe=new Employe("yosra.arbi@ssiiconsulting.tn", 1, "Yosra", "Arbi", Role.chefDepartement);
+		//Employe employe=new Employe("yosra.arbi@ssiiconsulting.tn", 0, "Yosra", "Arbi", Role.chefDepartement);
 		//Employe employe1=new Employe("syrine868@gmail.com", 1, "Jlassi", "Syrine", Role.ingénieur);
-		iemps.ajouterEmploye(employe);
-		Contrat contrat = new Contrat(new Date(),900,"CDI", new Employe("syrine868@gmail.com", 1, "Jlassi", "Syrine", Role.ingénieur));
-		iemps.ajouterContrat(contrat);
-		iemps.affecterContratAEmploye(contrat.getId().intValue(), employe.getId().intValue());
-		iemps.affecterEmployeADepartement(employe.getId().intValue(), dep.getId().intValue());
-		iemps.getEmployePrenomById(employe.getId().intValue());
-		iemps.getAllEmployeNamesJPQL();
-		iemps.getNombreEmployeJPQL();
+		//iemps.ajouterEmploye(employe);
+		//Contrat contrat = new Contrat(new Date(),900,"CDI", new Employe("syrine868@gmail.com", 1, "Jlassi", "Syrine", Role.ingénieur));
+		//iemps.ajouterContrat(contrat);
+		//iemps.affecterContratAEmploye(contrat.getId().intValue(), employe.getId().intValue());
+	//	iemps.affecterEmployeADepartement(employe.getId().intValue(), dep.getId().intValue());
+	//	iemps.getEmployePrenomById(employe.getId().intValue());
+		//iemps.getAllEmployeNamesJPQL();
+	//	iemps.getNombreEmployeJPQL();
+		iemps.getAllEmployeByEntreprise(entreprise);
 		
 	}
 
