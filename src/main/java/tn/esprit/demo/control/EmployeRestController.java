@@ -1,6 +1,7 @@
 package tn.esprit.demo.control;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.esprit.demo.entities.Contrat;
 import tn.esprit.demo.entities.Employe;
 import tn.esprit.demo.services.IEmployeService;
+
+
 
 @RestController
 public class EmployeRestController {

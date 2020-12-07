@@ -11,6 +11,11 @@ import javax.persistence.Table;
 public class MissionExterne extends Mission implements Serializable{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Column(name="mex_emailFacturation")
 	private String emailFacturation;
 	 

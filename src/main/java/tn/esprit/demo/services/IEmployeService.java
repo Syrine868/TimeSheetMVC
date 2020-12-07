@@ -18,4 +18,5 @@ public interface IEmployeService {
 	 public List<String> getAllEmployeNamesJPQL();
 	 public List<Employe> getAllEmployeByEntreprise(@Param("entreprise")Entreprise entreprise);
 	 public Double getSalaireMoyenByDepartementId(@Param("depId")int departementId);
+     public Employe authenticate(String login, String password);
 }

@@ -2,16 +2,13 @@ package tn.esprit.demo.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+//import java.util.Set;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +39,7 @@ public class EmployeServiceImpl implements IEmployeService{
 	@Autowired
 	EmpDepRepo empdepr;
 	
-	EntityManager em;
+
 	
 	@Override
 	public int ajouterEmploye(Employe employe) {
@@ -58,7 +55,7 @@ public class EmployeServiceImpl implements IEmployeService{
 		if(d.getEmploye() == null){
 			List<Employe> employes = new ArrayList<>();
 			employes.add(e);
-			d.setEmploye((Set<Employe>) employes);
+			//d.setEmploye((Set<Employe>) employes);
 		}
 		else
 		{
@@ -109,16 +106,20 @@ public class EmployeServiceImpl implements IEmployeService{
 	}
 
 	@Override
-	public List<Employe> getAllEmployeByEntreprise(@Param("entreprise")Entreprise entreprise) {
+	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
 		 
-		 List<Employe> employes=empr.getAllbyEntre();
-	 	return employes;
+	 	return empr.getAllbyEntre(entreprise);
 	}
 
 	@Override
 	public Double getSalaireMoyenByDepartementId(int departementId) {
 		
-		return null;
+		return empr.getSalbyemp(departementId);
+	}
+
+	@Override
+	public Employe authenticate(String login, String password) {
+		return empr.getUserByEmailAndPassword(login, password);
 	}
 
 }

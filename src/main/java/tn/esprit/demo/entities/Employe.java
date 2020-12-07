@@ -44,6 +44,19 @@ public class Employe implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private Role role;
 
+	
+	private String password;
+	
+	
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -102,7 +115,10 @@ public class Employe implements Serializable{
 				+ ", role=" + role + "]";
 	}
 
-	public Employe(Long id, String email, int isActif,  String nom,String prenom, Role role) {
+
+	
+	
+	public Employe(Long id, String email, int isActif, String prenom, String nom, Role role, String password) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -110,9 +126,9 @@ public class Employe implements Serializable{
 		this.prenom = prenom;
 		this.nom = nom;
 		this.role = role;
+		this.password = password;
 	}
-	
-	
+
 	public List<Timesheet> getTimesheets() {
 		return timesheets;
 	}
