@@ -13,20 +13,22 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
 @EnableAutoConfiguration
+@SpringBootApplication
 public class TimeSheetMvcApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TimeSheetMvcApplication.class, args);
+		SpringApplication.run(TimeSheetMvcApplication.class, args);	}
+
+	
+	@Bean
+	public ServletRegistrationBean servletRegistrationBean() {
+	FacesServlet servlet = new FacesServlet();
+	return new ServletRegistrationBean(servlet, "*.jsf"); 
 	}
 	@Bean
-	public ServletRegistrationBean<FacesServlet> servletRegistrationBean() {
-	FacesServlet servlet = new FacesServlet();
-	return new ServletRegistrationBean<FacesServlet>(servlet, "*.jsf"); }
-	@Bean
-	public FilterRegistrationBean<RewriteFilter> rewriteFilter() {
-	FilterRegistrationBean<RewriteFilter> rwFilter = new FilterRegistrationBean<RewriteFilter>(new RewriteFilter());
+	public FilterRegistrationBean rewriteFilter() {
+	FilterRegistrationBean rwFilter = new FilterRegistrationBean(new RewriteFilter());
 	rwFilter.setDispatcherTypes(EnumSet.of(DispatcherType.FORWARD, DispatcherType.REQUEST,
 	DispatcherType.ASYNC, DispatcherType.ERROR));
 	rwFilter.addUrlPatterns("/*");

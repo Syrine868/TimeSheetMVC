@@ -91,7 +91,6 @@ public class Entreprise implements Serializable{
 				+ departements + "]";
 	}
 	public Entreprise() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	

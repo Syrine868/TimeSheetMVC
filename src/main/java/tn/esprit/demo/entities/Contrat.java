@@ -46,19 +46,17 @@ public class Contrat implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employe getEmploye() {
-		return employe;
-	}
-
-	public void setEmploye(Employe employe) {
+	
+	
+	public Contrat(Date dateDebut, float salaire, String typeContrat, Employe employe) {
+		super();
+		this.dateDebut = dateDebut;
+		this.typeContrat = typeContrat;
+		this.salaire = salaire;
 		this.employe = employe;
 	}
 
-	@Override
-	public String toString() {
-		return "Contrat [id=" + id + ", dateDebut=" + dateDebut + ", typeContrat=" + typeContrat + ", salaire="
-				+ salaire + "]";
-	}
+
 
 	public Long getId() {
 		return id;
@@ -92,26 +90,24 @@ public class Contrat implements Serializable{
 		this.salaire = salaire;
 	}
 
+	public Employe getEmploye() {
+		return employe;
+	}
+
+	public void setEmploye(Employe employe) {
+		this.employe = employe;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
-	public Contrat(Long id, Date dateDebut, String typeContrat, float salaire) {
-		super();
-		this.id = id;
-		this.dateDebut = dateDebut;
-		this.typeContrat = typeContrat;
-		this.salaire = salaire;
+	@Override
+	public String toString() {
+		return "Contrat [id=" + id + ", dateDebut=" + dateDebut + ", typeContrat=" + typeContrat + ", salaire="
+				+ salaire + ", employe=" + employe + "]";
 	}
 
-	public Contrat(Date dateDebut, float salaire, String typeContrat, Employe employe) {
-		super();
-		this.dateDebut = dateDebut;
-		this.typeContrat = typeContrat;
-		this.salaire = salaire;
-		this.employe = employe;
-	}
-	
-	
+
 	
 }

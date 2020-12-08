@@ -39,11 +39,11 @@ public class EmployeRestController {
 	public void affecterContratEmp (@PathVariable("id")int contratId,@PathVariable("id")int  employeId){
 			ies.affecterContratAEmploye(contratId, employeId);
 	}
-	@PostMapping("/affecterdepemp/{departements_id}/{employe_id}")
-	@ResponseBody
-	public void affecterDepEmp (@PathVariable("departements_id")int contratId,@PathVariable("employe_id")int  employeId){
-			ies.affecterContratAEmploye(contratId, employeId);
-	}
+	//@PostMapping("/affecterdepemp/{departements_id}/{employe_id}")
+	//@ResponseBody
+	//public void affecterDepEmp (@PathVariable("departements_id")int contratId,@PathVariable("employe_id")int  employeId){
+		//	ies.affecterContratAEmploye(contratId, employeId);
+	//}
 	
 	@GetMapping("/afficherPrenomById/{first_name}")
 	@ResponseBody

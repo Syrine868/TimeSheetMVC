@@ -13,11 +13,12 @@ import tn.esprit.demo.entities.Entreprise;
 
 @Repository
 public interface EmployeRepository extends JpaRepository<Employe, Long>{
-	  @Query(value = "SELECT * FROM employe ", nativeQuery = true)
-	  List<Employe> findByPrenom();
+	 
+	@Query(value = "SELECT * FROM employe ", nativeQuery = true)
+	public  List<Employe> findByPrenom();
 
 	  @Query(value = "select count(*) from Employe ", nativeQuery = true)
-	  double countemployes();
+	  public  double countemployes();
 	  
 	 @Query("Select "
 				+ "DISTINCT e from Employe e "
@@ -31,7 +32,7 @@ public interface EmployeRepository extends JpaRepository<Employe, Long>{
 				+ "join cont.employe emp "
 				+ "join emp.departements deps "
 				+ "where deps.id=:departements_id")
-	 double getSalbyemp(@Param("departements_id")int departements_id);
+	 public double getSalbyemp(@Param("departements_id")int departements_id);
 	
 	 
 	 @Query("select e from Employe e where e.email=:email_emp and e.password=:password ")

@@ -67,5 +67,18 @@ public class Timesheet implements Serializable{
 		this.employe = employe;
 	}
 
+	public Timesheet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Timesheet(TimesheetsPD timesheets, Mission mission, Employe employe, boolean isValide) {
+		super();
+		this.timesheets = timesheets;
+		this.mission = mission;
+		this.employe = employe;
+		this.isValide = isValide;
+	}
+
 	
 }
