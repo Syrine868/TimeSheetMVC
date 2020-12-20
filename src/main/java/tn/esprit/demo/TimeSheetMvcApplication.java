@@ -12,9 +12,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @EnableAutoConfiguration
 @SpringBootApplication
+@EnableAspectJAutoProxy
 public class TimeSheetMvcApplication {
 
 	public static void main(String[] args) {
